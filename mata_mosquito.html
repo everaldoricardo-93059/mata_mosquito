@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Mata Mosquito</title>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="mata_mosquito.js"></script>
+</head>
+<!--onresize = leitura dinâmica das medidas da tela -->
+<body onresize="ajustaTamanhoPalcoJogo()">
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="life1" src="imagens/coracao_cheio.png">
+            <img id="life2" src="imagens/coracao_cheio.png">
+            <img id="life3" src="imagens/coracao_cheio.png">
+        </div>
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+    </div>
+    <script>
+        /*Obs: fazendo a atribuição do valor contido na variável
+        tempo dentro do elemento.
+        Obs: neste ponto tanto a var cronometro quanto
+        a var tempo já existem*/
+        document.getElementById('cronometro').innerHTML = tempo
+        
+
+        posicaoRandomica()
+
+        /*setInterval(<acão>, intervalo de tempo)*/
+        /*Obs: chamando a função posiçãoRandomica()
+        com base em um intervalo de tempo(Obs: tempo para
+        cada mosquito aparecer)*/
+        var criaMosquito = setInterval(function() {
+            posicaoRandomica()
+        }, criaMosquitoTempo)
+
+    </script>
+</body>
+</html>
